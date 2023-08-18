@@ -1,0 +1,52 @@
+---
+title: "eds221-day5"
+---
+
+## Testing Code
+
+R package for unit test: testthat
+
+expect_equal(): does the function return expected values?
+
+expect_type(): does the function return the expected type?
+
+expect_length(): if a vector is returned, is it the expected length?
+
+expect_true(): does the function return TRUE?
+
+## Let's think of some tests:
+
+```{r}
+# function provided
+fish_mass <- function(alpha, beta, fish_length) {
+  if (fish_length <= 0) {
+    stop("Fish length must be greater than 0.")
+  }
+  mass <- alpha * (fish_length ^ beta)
+}
+```
+
+```{r}
+library(testthat)
+# example of a unit test for fish_mass()
+
+# if you're expecting a length of 1, you can use this code:
+testthat::expect_length(fish_mass(alpha = 1, beta =2, fish_length = 3), 1)
+
+# this would return an error because you're expecting a length of 2
+testthat::expect_length(fish_mass(alpha = 1, beta =2, fish_length = 3), 2)
+```
+
+# CRAN Packages
+
+CRAN Task view: https://cran.r-project.org/web/views/
+
+ROpenSci: https://ropensci.org/
+
+Checklist for choosing between R packages in ecology and evolution: https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.5970
+
+```{r}
+# to cite
+# in R:
+# citation("packagename")
+```
