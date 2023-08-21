@@ -50,3 +50,11 @@ Checklist for choosing between R packages in ecology and evolution: https://onli
 # in R:
 # citation("packagename")
 ```
+
+# Creating packages
+
+1.  New project \> select "New R package"
+2.  create functions in .R scripts and store in R folder
+3.  To create documentation for the function, press inside function and select Code \> Insert Roxygen Skeleton
+4.  run devtools::document() to have it populate on the documentation page when you run ?function()
+5.  Then in Build tab, press install
